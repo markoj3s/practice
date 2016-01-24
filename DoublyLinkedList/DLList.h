@@ -6,14 +6,6 @@
 template <typename T>
 class DLList {
 
-	private:
-
-		struct Node {
-			T m_value;
-			struct Node *m_prevAddress;
-			struct Node *m_nextAddress;
-		};
-
 	public:
 
 		DLList();
@@ -23,6 +15,12 @@ class DLList {
 		void displayDLList ();
 
 	private:
+
+		struct Node {
+			T m_value;
+			struct Node *m_prevAddress;
+			struct Node *m_nextAddress;
+		};
 
 		size_t m_length;
 		Node *m_headAddress;
