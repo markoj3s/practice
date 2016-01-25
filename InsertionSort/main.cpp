@@ -13,17 +13,27 @@ int main() {
 	array[5] = 1;
 
 	//My version
-	for (int i = 1 ; i < 6 ; i++) {
-		int j = i;
-		while (j >= 0 && array[j] < array[j-1]) {
-			int tmp = array[j-1];
-			array[j-1] = array[j];
-			array[j] = tmp;
-			j = j-1;
+	for (int j = 1; j < 6; j++) {
+		int tmp = array[j];
+		int i = j;
+		while (i>=0 && array[i-1] > tmp) {
+			array[i] = array[i-1];
+			array[i-1] = tmp;
+			i = i-1;
 		}
 	}
-
 	/*
+	//My old version
+		for (int i = 1 ; i < 6 ; i++) {
+			int j = i;
+			while (j >= 0 && array[j] < array[j-1]) {
+				int tmp = array[j-1];
+				array[j-1] = array[j];
+				array[j] = tmp;
+				j = j-1;
+			}
+		}
+
 	//Intro to Algo version
 	for (int j = 1 ; j < 6 ; j++) {
 		int key = array[j];
