@@ -14,7 +14,7 @@ int main() {
 	array[4] = 2;
 	array[5] = 1;
 
-	InsertionSort::SortDesc<int>(array);
+	InsertionSort::SortAsc<int>(array);
 	InsertionSort::DisplayArray<int>(array, length);
 
 	return 0;

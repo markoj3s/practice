@@ -22,9 +22,9 @@ void InsertionSort::SortAsc ( T array[] ) {
 		int i = j;
 		while (i>0 && array[i-1] > tmp) {
 			array[i] = array[i-1];
-			array[i-1] = tmp;
 			i = i-1;
 		}
+		array[i] = tmp;
 	}
 }
 
@@ -35,9 +35,9 @@ void InsertionSort::SortDesc ( T array[] ) {
 		int i = j;
 		while (i>0 && array[i-1] < tmp) {
 			array[i] = array[i-1];
-			array[i-1] = tmp;
 			i = i-1;
 		}
+		array[i] = tmp;
 	}
 }
 
