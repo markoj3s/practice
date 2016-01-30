@@ -2,7 +2,6 @@
 #define DEF_SORT
 
 #include <iostream>
-#include <math.h>
 
 class Sort {
 
@@ -56,7 +55,7 @@ void Sort::Merge ( T A[], int p, int q, int r ) {
 template <typename T>
 void Sort::MergeSort ( T A[], int p, int r ) {
 	if ( p < r) {
-		int q = floor( (p+r)/2 );
+		int q = (int) (p+r)/2;
 		MergeSort ( A, p, q );
 		MergeSort ( A, q + 1, r );
 		Merge ( A, p, q, r );
@@ -92,7 +91,7 @@ void Sort::InsertionSortDesc ( T array[], int length ) {
 template <typename T>
 void Sort::DisplayArray( T array[], int length ) {
 	std::cout << " ###";
-	for (int i=0; i<length; i++) {
+	for ( int i = 0; i < length; i++ ) {
 		std::cout << " " << array[i];
 	}
 	std::cout << " ###" << std::endl;
