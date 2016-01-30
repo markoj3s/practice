@@ -25,7 +25,7 @@ int main() {
 	array[4] = 2;
 	array[5] = 1;
 
-	Sort::InsertionSortAsc ( array );
+	Sort::InsertionSortAsc ( array, length );
 	Sort::DisplayArray ( array, length );
 
 	return 0;

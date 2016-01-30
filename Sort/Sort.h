@@ -12,9 +12,9 @@ class Sort {
 		template <typename T>
 		static void MergeSort ( T A[], int p, int r );
 		template <typename T>
-		static void InsertionSortAsc ( T array[] );
+		static void InsertionSortAsc ( T array[], int length );
 		template <typename T>
-		static void InsertionSortDesc ( T array[] );
+		static void InsertionSortDesc ( T array[], int length );
 		template <typename T>
 		static void DisplayArray ( T array[], int length );
 };
@@ -64,11 +64,11 @@ void Sort::MergeSort ( T A[], int p, int r ) {
 }
 
 template <typename T>
-void Sort::InsertionSortAsc ( T array[] ) {
-	for ( int j = 1; j < 6; j++ ) {
+void Sort::InsertionSortAsc ( T array[], int length ) {
+	for ( int j = 1; j < length; j++ ) {
 		int tmp = array[j];
 		int i = j;
-		while ( i>0 && array[i-1] > tmp ) {
+		while ( i > 0 && array[i-1] > tmp ) {
 			array[i] = array[i-1];
 			i--;
 		}
@@ -77,11 +77,11 @@ void Sort::InsertionSortAsc ( T array[] ) {
 }
 
 template <typename T>
-void Sort::InsertionSortDesc ( T array[] ) {
-	for (int j = 1; j < 6; j++) {
+void Sort::InsertionSortDesc ( T array[], int length ) {
+	for (int j = 1; j < length; j++) {
 		int tmp = array[j];
 		int i = j;
-		while ( i>0 && array[i-1] < tmp ) {
+		while ( i > 0 && array[i-1] < tmp ) {
 			array[i] = array[i-1];
 			i--;
 		}
