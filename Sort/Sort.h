@@ -15,6 +15,12 @@ class Sort {
 		template <typename T>
 		static void InsertionSortDesc ( T array[], int length );
 		template <typename T>
+		static void HeapSort ( T array [], int heapSize );
+		template <typename T>
+		static void MaxHeapify ( T array [], int i, int heapSize );
+		template <typename T>
+		static void BuildMaxHeap ( T array [], int arrayLength );
+		template <typename T>
 		static void DisplayArray ( T array[], int length );
 };
 
@@ -85,6 +91,55 @@ void Sort::InsertionSortDesc ( T array[], int length ) {
 			i--;
 		}
 		array[i] = tmp;
+	}
+}
+
+template <typename T>
+void Sort::HeapSort ( T array [], int arrayLength ) {
+
+	int heapSize = arrayLength;
+	BuildMaxHeap (array, arrayLength);
+
+	for ( int i = arrayLength; i >= 1; i-- ) {
+		int tmp		= array[0];
+		array[0] 	= array[i];
+		array[i] 	= tmp;
+		heapSize--;
+		MaxHeapify (array, 0, heapSize);
+	}
+}
+
+template <typename T>
+void Sort::MaxHeapify ( T array [], int i, int heapSize ) {
+	int l(0);
+	int r(0);
+	int largest(0);
+
+	l = 2*i+1;
+	r = 2*i+2;
+
+	if ( l <= heapSize && array[l] > array[i] ) {
+		largest = l;
+	} else {
+		largest = i;
+	}
+
+	if ( r <= heapSize && array[r] > array[largest] ) {
+		largest = r;
+	}
+
+	if ( largest != i ) {
+		int tmp 		= array[i];
+		array[i] 		= array[largest];
+		array[largest] 	= tmp;
+		MaxHeapify ( array, largest, heapSize );
+	}
+}
+
+template <typename T>
+void Sort::BuildMaxHeap ( T array [], int arrayLength ) {
+	for (int i = arrayLength/2; i >= 0;i--){
+		MaxHeapify (array, i, arrayLength);
 	}
 }
 
